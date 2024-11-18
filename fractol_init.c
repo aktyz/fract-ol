@@ -14,7 +14,8 @@
 
 void		fractal_init(t_fractal *fractal);
 static void	ft_malloc_error(void);
-void		data_init(t_fractal *fractal);
+static void	data_init(t_fractal *fractal);
+static void	events_init(t_fractal *fractal);
 
 void	fractal_init(t_fractal *fractal)
 {
@@ -40,14 +41,27 @@ void	fractal_init(t_fractal *fractal)
 	}
 	fractal->img.pix_ptr = mlx_get_data_addr(fractal->img.img_ptr,
 		&fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
-	//events_init(fractal);
+	events_init(fractal);
 	data_init(fractal);
 }
 
-void		data_init(t_fractal *fractal)
+static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_value = 4;
 	fractal->check_i = 42;
+	fractal->shift_x = 0;
+	fractal->shift_y = 0;
+	fractal->zoom = 1.0;
+}
+
+static void	events_init(t_fractal *fractal)
+{
+	mlx_hook(fractal->mlx_window,
+		KeyPress, KeyPressMask, key_handler, fractal);
+	mlx_hook(fractal->mlx_window,
+		ButtonPress, ButtonPressMask, button_handler, fractal);
+	mlx_hook(fractal->mlx_window,
+		DestroyNotify, StructureNotifyMask, close_handler, fractal);
 }
 
 /**

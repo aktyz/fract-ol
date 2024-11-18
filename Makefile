@@ -27,6 +27,7 @@ $(NAME):
 		fractol_render.c \
 		fractol_transpositions.c \
 		fractol_math.c \
+		fractol_events.c \
 		-L minilibx-linux -lmlx -lX11 -lXext \
 		-L libft -lft
 

@@ -15,6 +15,8 @@
 
 #include <stdlib.h> // malloc free exit
 #include <math.h>
+#include <X11/X.h>
+#include <X11/keysym.h>
 #include "libft/headers/libft.h"
 #include "minilibx-linux/mlx.h"
 
@@ -65,6 +67,9 @@ typedef struct s_fractal
 	t_img	img;
 	double	escape_value;
 	int		check_i;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
 }	t_fractal;
 
 /**
@@ -89,5 +94,8 @@ double	ft_scale(double nb, double new_min, double new_max,
 	double old_min, double old_max);
 t_cmplx	sum_complex(t_cmplx x, t_cmplx y);
 t_cmplx	square_complex(t_cmplx c);
+int		button_handler(int button, int x, int y, t_fractal *fractal);
+int		close_handler(t_fractal *fractal);
+int		key_handler(int keysym, t_fractal *fractal);
 
 #endif

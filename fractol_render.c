@@ -52,8 +52,8 @@ static void	ft_handle_pixel(int x, int y, t_fractal *fractal)
 
 	z.r = 0.0;
 	z.i = 0.0;
-	c.r = ft_scale(x, -2, +2, 0, WIDTH);
-	c.i = ft_scale(y, +2, -2, 0, HEIGHT);
+	c.r = ft_scale(x, -2, +2, 0, WIDTH) * fractal->zoom + fractal->shift_x;
+	c.i = ft_scale(y, +2, -2, 0, HEIGHT) * fractal->zoom + fractal->shift_y;
 	i = 0;
 
 	while (i < fractal->check_i)
