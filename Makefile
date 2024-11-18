@@ -20,11 +20,23 @@ CFLAGS = -Wall -Wextra -Werror
 $(NAME):
 	@$(MAKE) -C ./libft
 	@$(MAKE) -C ./minilibx-linux
-	$(CC) $(CFLAGS) -o $(NAME) fractol.h fractol.c -L minilibx-linux -lmlx -lX11 -lXext -L libft -lft
+	$(CC) $(CFLAGS) -o $(NAME) \
+		fractol.h \
+		fractol.c \
+		fractol_init.c \
+		fractol_render.c \
+		fractol_transpositions.c \
+		fractol_math.c \
+		-L minilibx-linux -lmlx -lX11 -lXext \
+		-L libft -lft
 
 all: $(NAME)
 
 clean:
 	@$(MAKE) clean -C ./libft
 	@$(MAKE) clean -C ./minilibx-linux
-	rm fractol
+	rm -f $(NAME)
+
+fclean: clean
+
+re: fclean all
