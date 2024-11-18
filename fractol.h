@@ -7,6 +7,6 @@
 #include "libft/headers/libft.h"
 #include "minilibx-linux/mlx.h"
 
-#define ERROR_MESSAGE "Please enter\n ./a.out mandelbrot\nor\n./a.out julia <x> <y>\n"
+#define ERROR_MESSAGE "Please enter\n./fractol mandelbrot\nor\n./fractol julia <x> <y>\n"
 
 #endif
