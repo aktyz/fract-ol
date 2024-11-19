@@ -20,7 +20,7 @@
 #include "libft/headers/libft.h"
 #include "minilibx-linux/mlx.h"
 
-#define	ERROR_MESSAGE "Please enter\n./fractol mandelbrot\nor\n./fractol julia <x> <y>\n"
+#define	ERROR_MESSAGE "Please enter\n./fractol mandelbrot\nor\n./fractol julia <real> <i>\n"
 #define	WIDTH 800
 #define	HEIGHT 800
 
@@ -70,6 +70,8 @@ typedef struct s_fractal
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
+	double	julia_r;
+	double	julia_i;
 }	t_fractal;
 
 /**
@@ -96,6 +98,7 @@ t_cmplx	sum_complex(t_cmplx x, t_cmplx y);
 t_cmplx	square_complex(t_cmplx c);
 int		button_handler(int button, int x, int y, t_fractal *fractal);
 int		close_handler(t_fractal *fractal);
+int		julia_track(int x, int y, t_fractal *fractal);
 int		key_handler(int keysym, t_fractal *fractal);
 
 #endif

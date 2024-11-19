@@ -12,8 +12,8 @@ TODOs:
 - [x] code fractal_init() function
 - [x] code fractal_render() function
 - [x] implement ft_malloc_error()
-- [ ] implement events_init(fractal)
+- [x] implement events_init(fractal)
 - [x] implement data_init(fractal)
-- [ ] Julia set
+- [x] Julia set
 - [ ] norminette!!!!
 - [ ] valgrind!!!!

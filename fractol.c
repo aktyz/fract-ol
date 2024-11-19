@@ -20,6 +20,11 @@ int	main(int argc, char *argv[])
 		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 5)))
 	{
 		fractal.name = argv[1];
+		if (!ft_strncmp(argv[1], "julia", 5))
+		{
+			fractal.julia_r = ft_atodbl(argv[2]);
+			fractal.julia_i = ft_atodbl(argv[3]);
+		}
 		fractal_init(&fractal);
 		fractal_render(&fractal);
 		mlx_loop(fractal.mlx_connection);

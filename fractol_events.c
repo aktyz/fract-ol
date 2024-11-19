@@ -14,6 +14,7 @@
 
 int	button_handler(int button, int x, int y, t_fractal *fractal);
 int	close_handler(t_fractal *fractal);
+int	julia_track(int x, int y, t_fractal *fractal);
 int	key_handler(int keysym, t_fractal *fractal);
 
 int	button_handler(int button, int x, int y, t_fractal *fractal)
@@ -54,5 +55,16 @@ int	key_handler(int keysym, t_fractal *fractal)
 	else if (keysym == XK_comma)
 		fractal->check_i -= 10;
 	fractal_render(fractal);
+	return (0);
+}
+
+int	julia_track(int x, int y, t_fractal *fractal)
+{
+	if (!ft_strncmp(fractal->name, "julia", 5))
+	{
+		fractal->julia_r = ft_scale(x, -2, 2, 0, WIDTH) * fractal->zoom + fractal->shift_x;
+		fractal->julia_i = ft_scale(y, 2, -2, 0, HEIGHT) * fractal->zoom + fractal->shift_y;
+		fractal_render(fractal);
+	}
 	return (0);
 }
