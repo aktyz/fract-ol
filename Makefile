@@ -18,7 +18,9 @@ CFLAGS = -Wall -Wextra -Werror
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):
-	@$(MAKE) -C ./libft
+	@git clone git@github.com:aktyz/libft.git
+	@git clone https://github.com/42Paris/minilibx-linux.git
+	@$(MAKE) -C ./libft -fPIE
 	@$(MAKE) -C ./minilibx-linux
 	$(CC) $(CFLAGS) -o $(NAME) \
 		fractol.h \
