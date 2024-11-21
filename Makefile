@@ -20,7 +20,7 @@ CFLAGS = -Wall -Wextra -Werror
 $(NAME):
 	@git clone git@github.com:aktyz/libft.git
 	@git clone https://github.com/42Paris/minilibx-linux.git
-	@$(MAKE) -C ./libft -fPIE
+	@$(MAKE) -C ./libft
 	@$(MAKE) -C ./minilibx-linux
 	$(CC) $(CFLAGS) -o $(NAME) \
 		fractol.h \
@@ -31,13 +31,16 @@ $(NAME):
 		fractol_math.c \
 		fractol_events.c \
 		-L minilibx-linux -lmlx -lX11 -lXext \
-		-L libft -lft
+		-L libft -lft \
+		-no-pie
 
 all: $(NAME)
 
 clean:
 	@$(MAKE) clean -C ./libft
 	@$(MAKE) clean -C ./minilibx-linux
+	rm -rf ./libft
+	rm -rf ./minilibx-linux
 	rm -f $(NAME)
 
 fclean: clean
