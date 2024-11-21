@@ -14,5 +14,13 @@ TODOs:
 - [x] implement events_init(fractal)
 - [x] implement data_init(fractal)
 - [x] Julia set
-- [ ] norminette!!!!
+- [x] norminette!!!!
 - [x] valgrind!!!!
+- [x] Are wrong parameters correctly handled???
+
+# Ideas for improvement
+- [ ] Learn error handling in C
+- [ ] improve LIBFT atodbl()
+- [ ] switch ft_fractol_atodbl() to libft ft_atodbl()
+- [ ] add Zoom on mouse pointer
+- [ ] add another set of fractals <3

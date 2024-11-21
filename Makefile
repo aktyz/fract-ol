@@ -30,6 +30,7 @@ $(NAME):
 		fractol_transpositions.c \
 		fractol_math.c \
 		fractol_events.c \
+		fractol_atodbl.c \
 		-L minilibx-linux -lmlx -lX11 -lXext \
 		-L libft -lft \
 		-no-pie

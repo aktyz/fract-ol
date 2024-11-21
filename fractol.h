@@ -89,6 +89,7 @@ typedef struct s_cmplx
  * Program functions
  *
  */
+double	ft_fractol_atodbl(char *s);
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 double	ft_scale(double nb, double new_min, double new_max,
