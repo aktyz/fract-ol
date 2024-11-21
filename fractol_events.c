@@ -14,15 +14,16 @@
 
 int	button_handler(int button, int x, int y, t_fractal *fractal);
 int	close_handler(t_fractal *fractal);
-int	julia_track(int x, int y, t_fractal *fractal);
+//int	julia_track(int x, int y, t_fractal *fractal);
 int	key_handler(int keysym, t_fractal *fractal);
 
 int	button_handler(int button, int x, int y, t_fractal *fractal)
 {
-	ft_printf("button: %d, x: %d, y: %d\n", button, x, y);
-	if (button == 4) // zoom in
+	(void) x;
+	(void) y;
+	if (button == 4)
 		fractal->zoom *= 0.95;
-	if (button == 5) // zoom out
+	if (button == 5)
 		fractal->zoom *= 1.05;
 	fractal_render(fractal);
 	return (0);
@@ -39,7 +40,6 @@ int	close_handler(t_fractal *fractal)
 
 int	key_handler(int keysym, t_fractal *fractal)
 {
-	ft_printf("%d\n", keysym);
 	if (keysym == XK_Escape)
 		close_handler(fractal);
 	else if (keysym == XK_Left)
@@ -58,13 +58,15 @@ int	key_handler(int keysym, t_fractal *fractal)
 	return (0);
 }
 
-int	julia_track(int x, int y, t_fractal *fractal)
+/*int	julia_track(int x, int y, t_fractal *fractal)
 {
 	if (!ft_strncmp(fractal->name, "julia", 5))
 	{
-		fractal->julia_r = ft_scale(x, -2, 2, 0, WIDTH) * fractal->zoom + fractal->shift_x;
-		fractal->julia_i = ft_scale(y, 2, -2, 0, HEIGHT) * fractal->zoom + fractal->shift_y;
+		fractal->julia_r = ft_scale(x, -2, 2, 0, WIDTH)
+			* fractal->zoom + fractal->shift_x;
+		fractal->julia_i = ft_scale(y, 2, -2, 0, HEIGHT)
+			* fractal->zoom + fractal->shift_y;
 		fractal_render(fractal);
 	}
 	return (0);
-}
+}*/

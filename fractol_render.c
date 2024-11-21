@@ -36,6 +36,7 @@ void	fractal_render(t_fractal *fractal)
 	mlx_put_image_to_window(fractal->mlx_connection, fractal->mlx_window,
 		fractal->img.img_ptr, 0, 0);
 }
+
 /**
  * Function checks if imaginary point z = x + yi belongs to Mandelbrod set
  *
@@ -80,6 +81,7 @@ static void	ft_pixel_put(int x, int y, t_img *img, int color)
 	offset = (y * img->line_len) + (x * (img->bpp / 8));
 	*(unsigned int *)(img->pix_ptr + offset) = color;
 }
+
 /**
  * Function toggling between mandelbrot and julia fractal sets
  *

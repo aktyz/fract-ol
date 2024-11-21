@@ -13,31 +13,30 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#include <stdlib.h> // malloc free exit
-#include <math.h>
-#include <X11/X.h>
-#include <X11/keysym.h>
-#include "libft/headers/libft.h"
-#include "minilibx-linux/mlx.h"
+# include "libft/headers/libft.h"
+# include "minilibx-linux/mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
+# include <math.h>
+# include <stdlib.h> // malloc free exit
 
-#define	ERROR_MESSAGE "Please enter\n./fractol mandelbrot\nor\n./fractol julia <real> <i>\n"
-#define	WIDTH 800
-#define	HEIGHT 800
+# define WIDTH 800
+# define HEIGHT 800
 
 // Basic colors
-#define	BLACK	0x000000 // Black
-#define	WHITE	0xFFFFFF // White
+# define BLACK 0x000000 // Black
+# define WHITE 0xFFFFFF // White
 
 // Psychedelic colors
-#define NEON_GREEN    0x39FF14 // Bright neon green
-#define HOT_PINK      0xFF1493 // Hot pink
-#define ELECTRIC_BLUE 0x2C75FF // Vibrant electric blue
-#define LIME_YELLOW   0xCCFF00 // Lime yellow
-#define FIERY_RED     0xFF2400 // Fiery red
-#define ORANGE_PEEL   0xFFA500 // Psychedelic orange
-#define ULTRA_VIOLET  0x800080 // Deep ultraviolet purple
-#define CYAN_SPARKLE  0x00FFFF // Cyan sparkle
-#define MAGENTA_RUSH  0xFF00FF // Vivid magenta
+# define NEON_GREEN 0x39FF14    // Bright neon green
+# define HOT_PINK 0xFF1493      // Hot pink
+# define ELECTRIC_BLUE 0x2C75FF // Vibrant electric blue
+# define LIME_YELLOW 0xCCFF00   // Lime yellow
+# define FIERY_RED 0xFF2400     // Fiery red
+# define ORANGE_PEEL 0xFFA500   // Psychedelic orange
+# define ULTRA_VIOLET 0x800080  // Deep ultraviolet purple
+# define CYAN_SPARKLE 0x00FFFF  // Cyan sparkle
+# define MAGENTA_RUSH 0xFF00FF  // Vivid magenta
 
 /**
  * Structure used as a pixel buffer
@@ -92,13 +91,13 @@ typedef struct s_cmplx
  */
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
-double	ft_scale(double nb, double new_min, double new_max,
-	double old_min, double old_max);
+double	ft_scale(double nb, double new_min, double new_max, double old_min,
+			double old_max);
 t_cmplx	sum_complex(t_cmplx x, t_cmplx y);
 t_cmplx	square_complex(t_cmplx c);
 int		button_handler(int button, int x, int y, t_fractal *fractal);
 int		close_handler(t_fractal *fractal);
-int		julia_track(int x, int y, t_fractal *fractal);
+// int		julia_track(int x, int y, t_fractal *fractal);
 int		key_handler(int keysym, t_fractal *fractal);
 
 #endif

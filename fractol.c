@@ -31,7 +31,8 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		ft_printf("%s", ERROR_MESSAGE);
+		ft_printf("Please enter\n./fractol mandelbrot\n");
+		ft_printf("or\n./fractol julia <real> <i>\n");
 		exit(EXIT_FAILURE);
 	}
 	return (0);

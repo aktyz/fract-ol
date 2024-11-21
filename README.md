@@ -1,10 +1,9 @@
-# How to see the fractols?
+# How to see the fractals?
 
 1. Clone the repositiory to your Linux machine.
 2. Enter into the project folder
-3. Fetch/Pull or Clone my Libft and minilibx-linux projects into respective folders
-4. run "make" in the project folder
-5. run ./fractol mandelbrot
+3. run `make` in the project folder
+4. run `./fractol mandelbrot` or `./fractol julia <r> <i>` in the terminal
 
 TODOs:
 - [x] update Makefile to compile all fractol files together with two libraries: libft and minilibx-linux
@@ -16,4 +15,4 @@ TODOs:
 - [x] implement data_init(fractal)
 - [x] Julia set
 - [ ] norminette!!!!
-- [ ] valgrind!!!!
+- [x] valgrind!!!!
