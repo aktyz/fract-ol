@@ -91,7 +91,7 @@ typedef struct s_cmplx
  */
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
-double	ft_scale(double nb, double new_min, double new_max, double old_min,
+double	ft_scale(double nb, double new_min, double new_max,
 			double old_max);
 t_cmplx	sum_complex(t_cmplx x, t_cmplx y);
 t_cmplx	square_complex(t_cmplx c);

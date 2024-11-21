@@ -52,8 +52,8 @@ static void	ft_handle_pixel(int x, int y, t_fractal *fractal)
 	int		i;
 	int		color;
 
-	z.r = ft_scale(x, -2, +2, 0, WIDTH) * fractal->zoom + fractal->shift_x;
-	z.i = ft_scale(y, +2, -2, 0, HEIGHT) * fractal->zoom + fractal->shift_y;
+	z.r = ft_scale(x, -2, +2, WIDTH) * fractal->zoom + fractal->shift_x;
+	z.i = ft_scale(y, +2, -2, HEIGHT) * fractal->zoom + fractal->shift_y;
 	ft_mandelbrot_julia(&z, &c, fractal);
 	i = 0;
 	while (i < fractal->check_i)
@@ -61,7 +61,7 @@ static void	ft_handle_pixel(int x, int y, t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.r * z.r) + (z.i * z.i) > fractal->escape_value)
 		{
-			color = ft_scale(i, BLACK, WHITE, 0, fractal->check_i);
+			color = ft_scale(i, BLACK, WHITE, fractal->check_i);
 			ft_pixel_put(x, y, &fractal->img, color);
 			return ;
 		}

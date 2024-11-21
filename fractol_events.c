@@ -62,9 +62,9 @@ int	key_handler(int keysym, t_fractal *fractal)
 {
 	if (!ft_strncmp(fractal->name, "julia", 5))
 	{
-		fractal->julia_r = ft_scale(x, -2, 2, 0, WIDTH)
+		fractal->julia_r = ft_scale(x, -2, 2, WIDTH)
 			* fractal->zoom + fractal->shift_x;
-		fractal->julia_i = ft_scale(y, 2, -2, 0, HEIGHT)
+		fractal->julia_i = ft_scale(y, 2, -2, HEIGHT)
 			* fractal->zoom + fractal->shift_y;
 		fractal_render(fractal);
 	}
